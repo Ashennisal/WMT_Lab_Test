@@ -68,6 +68,14 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
         required
       />
 
+      <label>Expiry Date</label>
+      <input
+        type="date"
+        name="expiryDate"
+        value={formData.expiryDate ? formData.expiryDate.split("T")[0] : ""}
+        onChange={handleChange}
+      />
+
       <button className="btn primary" type="submit">{submitText}</button>
     </form>
   );

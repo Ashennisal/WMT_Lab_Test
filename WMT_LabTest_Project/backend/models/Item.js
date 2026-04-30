@@ -33,6 +33,9 @@ const itemSchema = new mongoose.Schema(
       min: [0, "Rating cannot be negative"],
       max: [5, "Rating cannot exceed 5"],
     },
+    expiryDate: {
+      type: Date,
+    },
   },
   { timestamps: true }
 );
