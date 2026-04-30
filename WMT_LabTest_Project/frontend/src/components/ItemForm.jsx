@@ -9,6 +9,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       description: "",
       imageUrl: "",
       rating: 0, // Added rating field
+      expiryDate: "", // Added expiryDate field
     }
   );
 
@@ -23,6 +24,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       ...formData,
       price: Number(formData.price),
       rating: Number(formData.rating), // Ensure rating is a number
+      expiryDate: formData.expiryDate ? new Date(formData.expiryDate) : null, // Convert to Date object
     });
   };
 
