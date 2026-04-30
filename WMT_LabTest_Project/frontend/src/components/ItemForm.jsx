@@ -8,6 +8,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       price: "",
       description: "",
       imageUrl: "",
+      rating: 0, // Added rating field
     }
   );
 
@@ -21,6 +22,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
     onSubmit({
       ...formData,
       price: Number(formData.price),
+      rating: Number(formData.rating), // Ensure rating is a number
     });
   };
 
@@ -54,6 +56,17 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
 
       <label>Image URL</label>
       <input name="imageUrl" value={formData.imageUrl} onChange={handleChange} />
+
+      <label>Rating</label>
+      <input
+        type="number"
+        name="rating"
+        value={formData.rating}
+        onChange={handleChange}
+        min="0"
+        max="5"
+        required
+      />
 
       <button className="btn primary" type="submit">{submitText}</button>
     </form>
